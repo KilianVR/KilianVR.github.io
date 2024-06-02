@@ -2,6 +2,9 @@
 
 Defractal es una página web que ofrece servicios de programación de apps a medida, diseño web y desarrollo web, marketing digital, creación de contenido y consultoría en tecnología de la información y la comunicación.
 
+
+Esta desplegada en Github Pages en la siguiente URL: https://kilianvr.github.io/
+
 ## Descripción del proyecto
 
 La página web está estructurada en las siguientes secciones:
