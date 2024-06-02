@@ -1,0 +1,44 @@
+---
+interface Props {
+  text: string;
+  link: string;
+}
+
+const { text, link } = Astro.props;
+---
+
+<div class="call-to-action"><a href={link}>{text}</a></div>
+
+<style>
+    .call-to-action {
+      font-family: Roboto, sans-serif;
+      font-weight: 500;
+      font-size: 18px;
+      color: #fff;
+      background: linear-gradient(90deg, #2a9d8f 0%, #0096c7 100%);
+      padding: .6rem 1.2rem;
+      border: solid #2a9d8f 2px;
+      box-shadow: rgb(0, 0, 0) 0px 0px 0px 0px;
+      border-radius: 50px;
+      transition: 471ms;
+      transform: translateY(0);
+      filter: drop-shadow(0 0 0.75rem black);
+      cursor: pointer;
+      align-items: center;
+      text-align: center;
+
+      &:hover {
+        transition: 471ms;
+        padding: 10px 50px;
+        transform: translateY(-0px);
+        background: linear-gradient(90deg, #2a9d8f 0%, #0096c7 100%);
+        color: #023e8a;
+        border: solid 2px #0066cc;
+      }
+
+      & a {
+        text-decoration: none;
+        color: inherit;
+      }
+    }
+</style>

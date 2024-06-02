@@ -1,0 +1,92 @@
+---
+import Image from "astro/components/Image.astro";
+
+interface Props {
+  title: string;
+  tag: string;
+  subtitle: string;
+  imgn: ImageMetadata;
+  link: string;
+}
+
+const { title, tag, subtitle, imgn, link } = Astro.props;
+---
+
+<div class="card">
+  <div class="cardImg">
+    <a href={link}><Image src={imgn} alt="imagen del tipo de proyecto" loading="lazy" /></a>
+  </div>
+  <div class="cardTag">
+    <p>{tag}</p>
+  </div>
+  <div class="carfInfo">
+    <p class="cardTitle">{title}</p>
+    <p class="cardSubtitle">{subtitle}</p>
+  </div>
+</div>
+<style>
+  .card {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    height: 260px;
+    background-color: var(--Cl-White);
+    border-radius: 1rem;
+    box-shadow: 0.1rem 0.1rem 0.2rem black;
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: translateY(-5px);
+    }
+
+    .cardImg {
+      display: flex;
+      justify-content: center;
+      padding-top: 1rem;
+
+      & img {
+        width: 160px;
+        height: 90px;
+        border-radius: 1rem;
+        transition: all 0.5s ease;
+        filter: saturate(.5);
+
+        &:hover {
+          filter: saturate(1);
+        }
+      }
+    }
+
+    .cardTag {
+      padding: 0.4rem 0;
+      font-size: 0.8em;
+    }
+
+    .cardTag p {
+      display: inline;
+      margin-left: 1.3rem;
+      padding: 0.3rem 1.3rem;
+      font-weight: 700;
+      color: var(--Cl-White);
+      background-color: var(--Cl-MainGreen);
+      border-radius: 0.5rem;
+      word-wrap: break-word;
+
+    }
+
+    .cardTitle {
+      padding: 0.6rem 1.3rem;
+      font-size: 1em;
+      font-weight: 800;
+      word-wrap: break-word;
+    }
+    .cardSubtitle {
+      font-size: .6em;
+      padding: 0rem 1.3rem;
+      padding-bottom: 1.4rem;
+      color: var(--Cl-Grey);
+      word-wrap: break-word;
+
+    }
+  }
+</style>

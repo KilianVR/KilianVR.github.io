@@ -1,0 +1,119 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Footer from "../components/footer.astro";
+import Image from "astro/components/Image.astro";
+import Headermenu from "../components/headermenu.astro";
+import Calltoactionbtn from "../components/calltoactionbtn.astro";
+import Equipo_defractal from "../images/NosotrosImg/equipo_defractal.webp";
+---
+
+<Layout>
+  <Headermenu />
+  <main>
+    <section class="main-hero-parallax">
+      <header>
+        <div class="main-parallax">
+          <h1>Somos Defractal</h1>
+          <h2>
+            Un grupo joven multidisciplinar con el objetivo de dar un
+            tratamiento integral para tu proyecto digital. Juntos, trabajamos
+            para brindarte una experiencia de cliente excepcional y ayudarte a
+            alcanzar el éxito en el mundo digital. ¡Conoce más sobre nosotros y
+            cómo podemos ayudarte a impulsar tu proyecto digital!
+          </h2>
+          <Calltoactionbtn text="Contactar" link="./contacto" />
+        </div>
+      </header>
+    </section>
+    <section class="about-us">
+      <header>
+        <h3>SOBRE NOSOTROS</h3>
+      </header>
+      <div class="about-us-container">
+        <p>
+          Somos un equipo apasionado y dinámico, compuesto por expertos en programación,
+          creación web, marketing digital y contenido visual. Nuestra misión es
+          brindarte soluciones innovadoras y personalizadas para impulsar tu
+          presencia en línea y alcanzar tus objetivos. Con una mentalidad
+          abierta y una actitud proactiva, nos esforzamos por entender las
+          necesidades específicas de cada cliente y desarrollar estrategias
+          efectivas para superar los desafíos del mercado digital. Nuestro
+          enfoque integral nos permite abarcar todos los aspectos de tu
+          proyecto, desde la creación de un sitio web atractivo y funcional
+          hasta la implementación de aplicaciones, campañas de marketing digital y la
+          producción de contenido visual de alta calidad. 
+        </p>
+        <hr>
+        <hr>
+        <p>
+          En nuestro equipo,
+          encontrará a profesionales con experiencia en: Progrmación de Apps Desarrollo web y diseño
+          UX/UI Marketing digital y publicidad en línea Creación de contenido
+          visual y audiovisual Estrategias de SEO y análisis de datos Juntos,
+          trabajamos para brindarte una experiencia de cliente excepcional y
+          ayudarte a alcanzar el éxito en el mundo digital. ¡Conoce más sobre
+          nosotros y cómo podemos ayudarte a impulsar tu proyecto digital!
+        </p>
+        <div class="about-img">
+          <Image src={Equipo_defractal} alt="El equipo Defractal" />
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  .main-hero-parallax .main-parallax {
+    background-image: url("../images/NosotrosImg/Parallax4.webp");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 720px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    & h1 {
+      text-align: center;
+      margin: 0 2rem;
+      color: #fff;
+      font-size: 2rem;
+      text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.9);
+    }
+
+    & h2 {
+      text-align: center;
+      margin: 0 2rem;
+      color: #fff;
+      font-size: 1.2rem;
+      text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.9);
+      padding-bottom: 2rem;
+    }
+  }
+
+  .about-us {
+    .about-us-container {
+      display: flex;
+      flex-direction: column;
+      width: 100vw;
+
+      & p {
+        text-align: center;
+        padding: 1.5rem 2rem;
+        font-size: 1rem;
+        color: black;
+
+      }
+      .about-img {
+        & img {
+        width: 100%;
+        height: auto; 
+        object-fit: cover;
+        }
+      }
+    }
+  }
+</style>

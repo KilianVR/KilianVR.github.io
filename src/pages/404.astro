@@ -1,0 +1,73 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Footer from "../components/footer.astro";
+import Headermenu from "../components/headermenu.astro";
+---
+
+<Layout>
+  <Headermenu />
+  <header class="header">
+    <h1>404</h1>
+    <h2>Página no encontrada</h2>
+  </header>
+  <main class="lost-user">
+    <section class="redir-user">
+      <div class="video-container">
+        <p>Mientras decides donde vas, puedes ver este video</p>
+        <iframe
+          width="560"
+          height="315"
+          src="https://www.youtube.com/embed/7Lpo8-rhKU8?si=7aWZvJu5iuO73AVw"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen></iframe>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  .header {
+    background-color: #ffffff;
+    color: #000000;
+    padding: 1rem;
+    text-align: center;
+  }
+
+  .main {
+    max-width: 800px;
+    margin: 2rem auto;
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  .video-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 1.5rem 0;
+
+    & p{
+      padding: 1rem 0;
+    }
+
+    & iframe {
+      border-radius: 2rem;
+    }
+  }
+
+  @media (max-width: 620px) {
+    .video-container {
+
+      & iframe {
+        scale: .5;
+      }
+    }
+  }
+</style>

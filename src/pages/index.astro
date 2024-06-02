@@ -1,0 +1,273 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Footer from "../components/footer.astro";
+import Image from "astro/components/Image.astro";
+import Headermenu from "../components/headermenu.astro";
+import Mainservices from "../components/mainservices.astro";
+import Cardproject from "../components/cardproject.astro";
+import defractalIsotype from "../images/defractalIsotype.webp";
+import digitalizacion from "../images/ProjectsImg/01_digiProy.webp";
+import video from "../images/ProjectsImg/02_video.webp";
+import apps from "../images/ProjectsImg/05_apps.webp";
+import diseñoweb from "../images/ProjectsImg/03_diseñoSeo.webp";
+import ImageSeparator from "../images/parallax2.webp";
+import Calltoactionbtn from "../components/calltoactionbtn.astro";
+---
+
+<Layout>
+  <Headermenu />
+  <main>
+    <section class="main-hero-parallax">
+      <header>
+        <div class="main-parallax">
+          <h3>Cuéntanos tu idea</h3>
+          <h4>
+            Gestionamos proyectos digitales e implementamos las herramientas que
+            tu negocio necesita. Web, aplicaciones móviles, publicidad, aceptar
+            pagos, vender en línea, procesar pedidos, un apoyo seguro para el
+            crecimiento de tu negocio.
+          </h4>
+          <Calltoactionbtn text="Contactar" link="./contacto"/>
+        </div>
+      </header>
+    </section>
+
+    <section class="main-intro">
+      <div class="main-intro-container">
+        <Image src={defractalIsotype} alt="Defractal isotipo" loading="lazy" />
+        <div class="main-intro-text">
+          <h1>Defractal</h1>
+          <h2>
+            Todo lo que necesitas para tu proyecto digital.<br />Código,
+            Contenido y Difusión
+          </h2>
+        </div>
+      </div>
+    </section>
+    <hr />
+    <hr />
+    <Mainservices />
+
+    <section class="main-image-sep">
+      <header>
+        <div class="image-sep">
+          <Image
+            src={ImageSeparator}
+            alt="Imagen descriptiva de los servicios de la empresa"
+            loading="lazy"
+          />
+          <h3>Agente Digitalizador del programa Kit Digital</h3>
+          <h4>
+            ¡Descubre cómo podemos ayudarte a digitalizar tu negocio! Ofrecemos
+            soluciones avanzadas en Tecnología de la Información y la
+            Comunicación asesorando a nuestros clientes para que cumplan sus
+            objetivos de forma eficiente.
+          </h4>
+        </div>
+      </header>
+    </section>
+
+    <hr />
+    <hr />
+
+    <section class="main-projects">
+      <header>
+        <h3 class="h3-textoverlay">PROYECTOS</h3>
+      </header>
+      <div class="card-project-container">
+        <Cardproject
+          title="Solventia Solar"
+          tag="Digitalización"
+          subtitle="Adios al Papel. Centralización de la gestión documental en Microsoft Sharepoint con flujos de trabajo automatizados."
+          imgn={digitalizacion}
+          link="#"
+        />
+        <Cardproject
+          title="Junta de Extremadura"
+          tag="Video"
+          subtitle="Video promocional de evento deportivo más campaña publicitaria en RRSS."
+          imgn={video}
+          link="#"
+        />
+        <Cardproject
+          title="MuchoMueble"
+          tag="Diseño Web y Seo"
+          subtitle="Diseño de web e-commerce y campaña de marketing dedicada al posicionamiento."
+          imgn={diseñoweb}
+          link="#"
+        />
+        <Cardproject
+          title="SolarPack"
+          tag="Apps"
+          subtitle="Creación de aplicación personalizada para operarios en planta solar fotovoltaica."
+          imgn={apps}
+          link="#"
+        />
+      </div>
+    </section>
+
+    <section class="main-parallax">
+      <header>
+        <div class="parallax3">
+          <h3>Haz que tu negocio cobre vida</h3>
+          <h4>Un equipo creativo completo.<br>Diseños personalizados, fotografía de producto y video marketing</h4>
+        </div>
+      </header>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>
+
+<style>
+  .main-hero-parallax .main-parallax {
+    background-image: url("../images/main_hero_img4.webp");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 720px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    & h3 {
+      text-align: center;
+      margin: 0 2rem;
+      color: #fff;
+      font-size: 2rem;
+      text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.9);
+    }
+
+    & h4 {
+      text-align: center;
+      margin: 0 2rem;
+      color: #fff;
+      font-size: 1.2rem;
+      text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.9);
+      padding-bottom: 2rem;
+    }
+
+    
+  }
+
+  .main-intro {
+    .main-intro-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem 1rem;
+      gap: 1rem;
+      & img {
+        width: 80px;
+        height: 88px;
+      }
+
+      .main-intro-text {
+        max-width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        & h1 {
+          text-align: center;
+          margin: 0 2rem;
+          color: black;
+          font-size: 1.5rem;
+          word-wrap: break-word;
+        }
+        & h2 {
+          text-align: center;
+          margin: 0 2rem;
+          color: black;
+          font-size: 1rem;
+          word-wrap: break-word;
+        }
+      }
+    }
+  }
+
+  .main-image-sep {
+    padding: 1rem 0;
+
+    .image-sep {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      & img {
+        width: 100%;
+        height: auto; /*Quitar para @media > 720 */
+        object-fit: cover;
+      }
+
+      & h3 {
+        text-align: center;
+        margin: 0 2rem;
+        color: black;
+        font-size: 1.4rem;
+        text-shadow: 3px 3px 6px rgba(255, 255, 255, 0.9);
+      }
+
+      & h4 {
+        text-align: center;
+        margin: 0.4rem 4rem;
+        color: black;
+        font-size: 1rem;
+        text-shadow: 3px 3px 6px rgba(255, 255, 255, 0.9);
+      }
+    }
+  }
+  .main-projects {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem 0;
+
+    .card-project-container {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+  }
+
+  .main-parallax .parallax3 {
+    background-image: url("../images/parallax3.webp");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    & h3 {
+      text-align: center;
+      margin: 0 2rem;
+      color: #fff;
+      font-size: 2em;
+      text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.9);
+    }
+
+    & h4 {
+      text-align: center;
+      margin: 0 3rem;
+      color: #fff;
+      font-size: 1em;
+      text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.9);
+    }
+  }
+
+  @media (min-width: 721px) {
+    .main-image-sep .image-sep {
+      & img {
+        height: 600px;
+      }
+    }
+  }
+</style>

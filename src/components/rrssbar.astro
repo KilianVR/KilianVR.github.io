@@ -1,0 +1,36 @@
+---
+import Image from "astro/components/Image.astro";
+import youtube from "../images/youtube_Icon.webp";
+import facebook from "../images/Facebook_Icon.webp";
+import linkedin from "../images/Linkedin_Icon.webp";
+---
+
+<div class="ads-rrss">
+  <a href="https://www.youtube.com/@DefractalEs" target="_blank"
+    ><Image src={youtube} alt="Youtube Icon" loading="eager" /></a
+  >
+  <a href="https://www.facebook.com/Defractalproducciones" target="_blank"
+    ><Image src={facebook} alt="Facebook Icon" loading="eager" /></a
+  >
+  <a href="https://es.linkedin.com/" target="_blank"
+    ><Image src={linkedin} alt="Linkedin Icon" loading="eager" /></a
+  >
+</div>
+
+<style>
+  .ads-rrss {
+    display: flex;
+
+    & img {
+      scale: 0.4;
+      outline: 8px double rgba(0, 0, 0, 0.3);
+      border-radius: 50%;
+      filter: grayscale(1);
+      transition: scale 0.5s ease;
+
+      &:hover {
+        scale: 0.5;
+      }
+    }
+  }
+</style>

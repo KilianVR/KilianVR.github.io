@@ -1,0 +1,208 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Footer from "../components/footer.astro";
+import Cardproject from "../components/cardproject.astro";
+import Image from "astro/components/Image.astro";
+import Headermenu from "../components/headermenu.astro";
+import cardimg1 from "../images/illustration-article.svg";
+import digitalizacion from "../images/ProjectsImg/01_digiProy.webp";
+import video from "../images/ProjectsImg/02_video.webp";
+import marketing from "../images/ProjectsImg/04_marketing.webp";
+import apps from "../images/ProjectsImg/05_apps.webp";
+import diseñoweb from "../images/ProjectsImg/03_diseñoSeo.webp";
+import kitdigital from "../images/ProjectsImg/06_kitdigital.webp";
+import ImageSeparator from "../images/parallax2.webp";
+
+---
+
+<Layout>
+  <Headermenu />
+  <main>
+    <section class="main-hero-parallax">
+      <header>
+        <div class="main-parallax">
+          <h1>Cuéntanos tu idea</h1>
+          <h2>
+            Gestionamos proyectos digitales e implementamos las herramientas que
+            tu negocio necesita. Web, aplicaciones móviles, publicidad, aceptar
+            pagos, vender en línea, procesar pedidos, un apoyo seguro para el
+            crecimiento de tu negocio.
+          </h2>
+        </div>
+      </header>
+    </section>
+    <section class="main-projects">
+      <header>
+        <h3 class="h3-textoverlay">PROYECTOS</h3>
+      </header>
+      <div class="card-project-container">
+        <Cardproject
+          title="Solventia Solar"
+          tag="Digitalización"
+          subtitle="Adios al Papel. Centralización de la gestión documental en Microsoft Sharepoint con flujos de trabajo automatizados."
+          imgn={digitalizacion}
+          link="#"
+        />
+        <Cardproject
+          title="Junta de Extremadura"
+          tag="Video"
+          subtitle="Video promocional de evento deportivo más campaña publicitaria en RRSS."
+          imgn={video}
+          link="#"
+        />
+        <Cardproject
+          title="MuchoMueble"
+          tag="Diseño Web y Seo"
+          subtitle="Diseño de web e-commerce y campaña de marketing dedicada al posicionamiento."
+          imgn={diseñoweb}
+          link="#"
+        />
+        <Cardproject
+          title="SolarPack"
+          tag="Apps"
+          subtitle="Creación de aplicación personalizada para operarios en planta solar fotovoltaica."
+          imgn={apps}
+          link="#"
+        />
+        <Cardproject
+          title="Vinos Hermanos"
+          tag="Kit Digital"
+          subtitle="Cobertura completa del Kit Digital con diseño web, marketing y promo en video."
+          imgn={kitdigital}
+          link="#"
+        />
+        <Cardproject
+          title="Teledeporte"
+          tag="Video"
+          subtitle="Cobertura visual del evento de motociclismo Enduro."
+          imgn={video}
+          link="#"
+        />
+        <Cardproject
+          title="Gestoria Garlan"
+          tag="Apps"
+          subtitle="Adaptación y modificación de aplicación móvil para gestión documental."
+          imgn={apps}
+          link="#"
+        />
+        <Cardproject
+          title="SolarPack"
+          tag="Apps"
+          subtitle="Sistema de imputación de horas por trabajador y proyecto."
+          imgn={apps}
+          link="#"
+        />
+        <Cardproject
+          title="Dekair"
+          tag="Diseño Web y Seo"
+          subtitle="Diseño de web e e-commerce responsive para negocio de venta de plantas aereas."
+          imgn={diseñoweb}
+          link="#"
+        />
+        <Cardproject
+          title="Hipertronic"
+          tag="Marketing"
+          subtitle="Embudo de ventas automatizado con dashboard de datos."
+          imgn={marketing}
+          link="#"
+        />
+      </div>
+    </section>
+    <section class="main-image-sep">
+      <header>
+        <div class="image-sep">
+          <Image
+            src={ImageSeparator}
+            alt="Imagen descriptiva de los servicios de la empresa"
+            loading="lazy"
+          />
+          <h3>Agente Digitalizador del programa Kit Digital</h3>
+          <h4>
+            ¡Descubre cómo podemos ayudarte a digitalizar tu negocio! Ofrecemos
+            soluciones avanzadas en Tecnología de la Información y la
+            Comunicación asesorando a nuestros clientes para que cumplan sus
+            objetivos de forma eficiente.
+          </h4>
+        </div>
+      </header>
+    </section>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  .main-hero-parallax .main-parallax {
+    background-image: url("../images/ProjectsImg/Proyectos_img.webp");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 720px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    & h1 {
+      text-align: center;
+      margin: 0 2rem;
+      color: #fff;
+      font-size: 2rem;
+      text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.9);
+    }
+
+    & h2 {
+      text-align: center;
+      margin: 0 2rem;
+      color: #fff;
+      font-size: 1.2rem;
+      text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.9);
+      padding-bottom: 2rem;
+    }
+  }
+  .main-projects {
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem 0;
+
+    .card-project-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-auto-rows: 20rem;
+      justify-items: center;
+      align-items: center;
+    }
+  }
+  .main-image-sep {
+    padding: 1rem 0;
+
+    .image-sep {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      & img {
+        width: 100%;
+        height: auto; /*Quitar para @media > 720 */
+        object-fit: cover;
+      }
+
+      & h3 {
+        text-align: center;
+        margin: 0 2rem;
+        color: black;
+        font-size: 1.4rem;
+        text-shadow: 3px 3px 6px rgba(255, 255, 255, 0.9);
+      }
+
+      & h4 {
+        text-align: center;
+        margin: 0.4rem 4rem;
+        color: black;
+        font-size: 1rem;
+        text-shadow: 3px 3px 6px rgba(255, 255, 255, 0.9);
+      }
+    }
+  }
+</style>

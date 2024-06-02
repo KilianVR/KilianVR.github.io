@@ -1,0 +1,87 @@
+---
+import Image from "astro/components/Image.astro";
+import Programming from "../images/ServicesImg/Programing.webp";
+import DigitalMarketing from "../images/ServicesImg/digital-marketing.webp";
+import ContentCreator from "../images/ServicesImg/video.webp";
+---
+
+<section class="main-services">
+  <header>
+    <h3 class="h3-textoverlay">SERVICIOS</h3>
+  </header>
+  <div class="card-services-container">
+    <div class="card-services">
+      <Image src={Programming} alt="services icon" loading="lazy" />
+      <h4 class="h4-textoverlay">Desarrollo Web/App</h4>
+      <p class="card-serviceCaption">
+        Programación web a medida y aplicaciones para optimizar operaciones y
+        mejorar la experiencia del usuario garantizando seguridad y
+        escalabilidad.
+      </p>
+    </div>
+  </div>
+  <div class="card-services-container">
+    <div class="card-services">
+      <Image src={DigitalMarketing} alt="services icon" loading="lazy" />
+      <h4 class="h4-textoverlay">Marketing Digital</h4>
+      <p class="card-serviceCaption">
+        Estrategias de marketing digital para aumentar la visibilidad y el
+        tráfico en línea, mejorando la presencia en redes sociales y la imagen
+        de marca.
+      </p>
+    </div>
+  </div>
+  <div class="card-services-container">
+    <div class="card-services">
+      <Image src={ContentCreator} alt="services icon" loading="lazy" />
+      <h4 class="h4-textoverlay">Contenido Visual</h4>
+      <p class="card-serviceCaption">
+        Especialistas en creación de contenido, desde la web hasta campañas
+        publicitarias impactantes en video, animación 2D/3D y efectos digitales.
+      </p>
+    </div>
+  </div>
+</section>
+
+<style>
+  .main-services {
+    padding: 1rem 0;
+    .card-services-container {
+      .card-services {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        & img {
+          scale: 0.6;
+          transition: scale 0.5s ease;
+          &:hover {
+            scale: 0.8;
+          }
+        }
+
+        .h4-textoverlay {
+          font-size: 1.2em;
+          color: rgb(60, 112, 107);
+        }
+
+        .card-serviceCaption {
+          font-size: 0.9em;
+          font-weight: 600;
+          padding: 0.5rem 6rem;
+          text-align: center;
+          margin: 0.2rem 10rem;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 720px) {
+    .main-services .card-services-container .card-services {
+      .card-serviceCaption {
+        margin: 0;
+      }
+    }
+  }
+ 
+</style>

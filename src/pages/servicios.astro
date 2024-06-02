@@ -1,0 +1,83 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Footer from "../components/footer.astro";
+import Image from "astro/components/Image.astro";
+import Headermenu from "../components/headermenu.astro";
+import Mainservices from "../components/mainservices.astro";
+import Digitalizacion from "../images/ServicesImg/digitalizacion.webp";
+import Calltoactionbtn from "../components/calltoactionbtn.astro";
+---
+
+<Layout>
+  <Headermenu />
+  <main>
+    <section class="services-intro">
+      <header class="services-intro-container">
+        <Image src={Digitalizacion} alt="Defractal isotipo" loading="eager" />
+        <div class="services-intro-text">
+          <h1>
+            Servicios de Creación Web, Marketing Digital y Contenido Visual
+          </h1>
+          <h2>
+            Ofrecemos soluciones personalizadas para impulsar tu presencia en
+            línea. Desde la creación de sitios web únicos y funcionales hasta
+            estrategias de marketing digital efectivas y creación de contenido
+            visual atractivo, estamos aquí para ayudarte a destacar en el mundo
+            digital. Confiá en nosotros y deja que te ayudemos a alcanzar tus
+            objetivos en línea.
+          </h2>
+          <Calltoactionbtn text="Ver Proyectos" link="./proyectos" />
+        </div>
+      </header>
+      <Mainservices />
+    </section>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  .services-intro {
+    .services-intro-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+      & img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+      }
+
+      .services-intro-text {
+        max-width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        align-items: center;
+        padding: 1.5rem 10rem;
+
+        & h1 {
+          text-align: center;
+          margin: 0 2rem;
+          color: black;
+          font-size: 1.5rem;
+          word-wrap: break-word;
+        }
+        & h2 {
+          text-align: center;
+          margin: 0 2rem;
+          color: black;
+          font-size: 1rem;
+          word-wrap: break-word;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 720px) {
+    .services-intro .services-intro-text {
+      padding: 1.5rem 2.5rem;
+    }
+  }
+</style>

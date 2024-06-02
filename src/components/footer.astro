@@ -1,0 +1,104 @@
+---
+import Rrssbar from "./rrssbar.astro";
+import Image from "astro/components/Image.astro";
+import MenuLi from "./menuLi.astro";
+import defractalIsotype from "../images/defractalIsotype.webp";
+---
+
+<footer class="footer">
+  <Image src={defractalIsotype} alt="Defractal isotipo" loading="lazy" />
+  <div class="footer-container">
+    <div class="footer-column">
+      <MenuLi />
+    </div>
+    <div class="footer-column">
+      <ul>
+        <li><a href="#">Privacidad</a></li>
+        <li><a href="#">Aviso Legal</a></li>
+        <li><a href="#">Cookies</a></li>
+      </ul>
+    </div>
+  </div>
+  
+
+  <div class="footer-row-bottom">
+    <div class="footer-info-column">
+      <span class="material-symbols-outlined"> phone_iphone </span>
+      <span class="material-symbols-outlined"> pin_drop </span>
+      <span class="material-symbols-outlined"> mail </span>
+    </div>
+    <div class="footer-info-column">
+      <p>+34 628 666666</p>
+      <p>C/Polígono Los Caños 16</p>
+      <p>info@defractal.es</p>
+    </div>
+  </div>
+
+  <Rrssbar />
+  <p>Diseñado por Kilian Vázquez Rodríguez &copy;</p>
+</footer>
+
+<style>
+  .footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #333;
+    color: #fff;
+    padding: 2rem 0;
+
+    & img {
+      margin: 2rem 0;
+      width: 80px;
+      height: 88px;
+    }
+
+    .footer-container {
+      display: flex;
+      justify-content: center;
+      gap: 3rem;
+
+      .footer-column {
+        display: flex;
+        flex-direction: column;
+        width: 33.33%;
+
+        & ul {
+          list-style: none;
+          padding: 1rem 1rem;
+          & li {
+            margin: 1rem 0;
+          }
+        }
+
+        & a {
+          color: #fff;
+          text-decoration: none;
+        }
+
+        .menu {
+          & li {
+            text-transform: lowercase;
+          }
+
+          & li:first-letter {
+            text-transform: uppercase;
+          }
+        }
+      }
+    }
+    .footer-row-bottom {
+      display: flex;
+      align-items: center;
+      padding: 2rem 0;
+
+      .footer-info-column {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+        padding: 0 1rem;
+      }
+    }
+  }
+</style>
